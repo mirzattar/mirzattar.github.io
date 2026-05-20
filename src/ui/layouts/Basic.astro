@@ -1,0 +1,33 @@
+---
+import "@css/global.css";
+import "@css/colors.css";
+import type { LocaleCodes } from "@src/globals";
+
+import Analytics from "@ui/components/Analytics.astro";
+
+const { PageName, lang } = Astro.props;
+const SiteName = "mirzattar";
+const PageTitle = `${PageName} ~ ${SiteName}`;
+
+interface Props {
+	children: any
+	PageName: string
+	lang: LocaleCodes
+}
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<script src="@js/theme.ts"></script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{PageTitle}</title>
+	</head>
+	<body><slot /></body>
+	<Analytics />
+</html>

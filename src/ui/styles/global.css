@@ -1,0 +1,39 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: sans-serif;
+	min-height: 100vh;
+
+	a {
+		text-underline-offset: .25em;
+		transition: text-underline-offset 100ms ease-out;
+	}
+
+	a:hover {
+		text-underline-offset: .5em
+	}
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	box-sizing: border-box
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
