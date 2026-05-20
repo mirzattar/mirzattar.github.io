@@ -42,14 +42,14 @@ jobs:
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
       - name: Install dependencies
         run: 'bun install'
-        working-directory: ${{ env.BUILD_PATH }}
+        working-directory: ${{ github.workspace }}
       - name: Build with Astro
         run: 'bun run build'
-        working-directory: ${{ env.BUILD_PATH }}
+        working-directory: ${{ github.workspace }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
         with:
-          path: ${{ env.BUILD_PATH }}/dist
+          path: ${{ github.workspace }}/dist
 
   deploy:
     environment:
