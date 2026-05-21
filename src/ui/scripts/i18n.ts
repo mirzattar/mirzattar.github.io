@@ -1,34 +1,32 @@
 import { effect, Signal, signal } from "@preact/signals"
-import { LocaleCodes } from "@src/globals"
+import * as globals from "@src/globals"
 
-const STORAGE_LANGUAGE_KEY = "lang"
-
-const matchLangStrToEnum = (str: string | null, dflt?: LocaleCodes): LocaleCodes => {
+const matchLangStrToEnum = (str: string | null, dflt?: globals.LocaleCodes): globals.LocaleCodes => {
 	switch (str) {
-		case LocaleCodes.EN:
-			return LocaleCodes.EN
+		case globals.LocaleCodes.EN:
+			return globals.LocaleCodes.EN
 
-		case LocaleCodes.ID:
-			return LocaleCodes.ID
+		case globals.LocaleCodes.ID:
+			return globals.LocaleCodes.ID
 
 		default:
-			return dflt ?? LocaleCodes.EN
+			return dflt ?? globals.LocaleCodes.EN
 	}
 }
 
-export const getUserLang = (): LocaleCodes => {
+export const getUserLang = (): globals.LocaleCodes => {
 	return matchLangStrToEnum(navigator.language.substring(0, 2))
 }
 
-export const getLang = (): LocaleCodes => {
-	return matchLangStrToEnum(localStorage.getItem(STORAGE_LANGUAGE_KEY))
+export const getLang = (): globals.LocaleCodes => {
+	return matchLangStrToEnum(localStorage.getItem(globals.STORAGE_LANGUAGE_KEY))
 }
 
-if (localStorage.getItem(STORAGE_LANGUAGE_KEY) === null)
-	localStorage.setItem(STORAGE_LANGUAGE_KEY, getUserLang())
+if (localStorage.getItem(globals.STORAGE_LANGUAGE_KEY) === null)
+	localStorage.setItem(globals.STORAGE_LANGUAGE_KEY, getUserLang())
 
-export const Language: Signal<LocaleCodes> = signal(getLang())
+export const Language: Signal<globals.LocaleCodes> = signal(getLang())
 
 effect(() => {
-	localStorage.setItem(STORAGE_LANGUAGE_KEY, Language.value)
+	localStorage.setItem(globals.STORAGE_LANGUAGE_KEY, Language.value)
 })
