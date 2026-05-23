@@ -1,10 +1,9 @@
 import { effect, signal } from "@preact/signals"
 import * as globals from "@src/globals"
 
-function getAccentHue(): number {
-	return Number(
-		localStorage.getItem(globals.STORAGE_ACCENT_COLOR_HUE_KEY)
-	)
+function getAccentHue() {
+	const item = localStorage.getItem(globals.STORAGE_ACCENT_COLOR_HUE_KEY)
+	return (item === null) ? null : Number(item)
 }
 
 export const ACCENT_COLOR_HUE = signal(
