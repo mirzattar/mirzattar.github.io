@@ -4,5 +4,5 @@ const currentURL = new URL(window.location.href)
 const hasPath = currentURL.pathname.at(0) !== "/"
 
 window.location.replace(
-	`${currentURL.origin}/${getUserLang()}${hasPath ? currentURL.pathname : ""}`,
+	`${currentURL.origin}/${getUserLang()}${hasPath ? currentURL.pathname : ""}`
 )

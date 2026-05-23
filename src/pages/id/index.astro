@@ -4,13 +4,14 @@ import { LocaleCodes } from "@src/globals";
 
 import Basic from "@l/Basic.astro";
 import ThemeToggle from "@c/ThemeToggle.tsx";
+import Heading from "@c/Heading.tsx";
 
 const PageName = "Home";
 ---
 
 <Basic lang={LocaleCodes.ID} PageName={PageName}>
 	<main>
-		<h1 style="--area: a">Halo</h1>
+		<Heading emphasis={true} level={1} style="--area: a">Halo</Heading>
 		<div style="--area: c">
 			<p>Sedang dalam pembangunan, mohon cek kembali nanti.</p>
 			<ThemeToggle client:only="preact" />
