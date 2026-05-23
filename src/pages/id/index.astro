@@ -4,6 +4,7 @@ import { LocaleCodes } from "@src/globals";
 
 import Basic from "@l/Basic.astro";
 import ThemeToggle from "@c/ThemeToggle.tsx";
+import ThemeRandom from "@c/ThemeRandom";
 import Heading from "@c/Heading.tsx";
 
 const PageName = "Home";
@@ -14,7 +15,10 @@ const PageName = "Home";
 		<Heading emphasis={true} level={1} style="--area: a">Halo</Heading>
 		<div style="--area: c">
 			<p>Sedang dalam pembangunan, mohon cek kembali nanti.</p>
-			<ThemeToggle client:only="preact" />
+			<div class="btn-container">
+				<ThemeToggle client:only="preact" />
+				<ThemeRandom client:only="preact" />
+			</div>
 		</div>
 		<ul style="--area: b">
 			<li><a href="https://github.com/mirzattar">github</a></li>

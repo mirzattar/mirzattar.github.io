@@ -1,4 +1,4 @@
-import { Button } from '@base-ui/react/button'
+import { Button } from '@c/Buttons'
 
 import faSun from "@img/sun-solid-full.svg"
 import faMoon from "@img/moon-solid-full.svg"
@@ -14,7 +14,7 @@ export default function ThemeToggle() {
 	if (Theme.value === Themes.light) setIcon(faSun.src)
 	if (Theme.value === Themes.dark) setIcon(faMoon.src)
 
-	const pointerDownHandler = () => {
+	const clickHandler = () => {
 		setIsAnimating(true)
 		if (Theme.value === Themes.light) {
 			setIcon(faMoon.src)
@@ -26,7 +26,7 @@ export default function ThemeToggle() {
 	}
 
 	return <Button
-		onPointerDown={ pointerDownHandler }
+		onClick={ clickHandler }
 		onAnimationEnd={ () => setIsAnimating(false) }
 		id={ ID }
 		class={ `btn ${isAnimating ? 'btn-push-anim' : ''}` }

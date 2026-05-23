@@ -1,0 +1,47 @@
+@keyframes push {
+	from {
+		scale: 1;
+		box-shadow: 0 .2rem .2rem rgba(127 127 127 / 0.1);
+	}
+
+	25% {
+		scale: 0.8;
+		box-shadow: inset 0 .2rem .2rem rgba(127 127 127 / 0.1);
+	}
+
+	75% {
+		scale: 1.1;
+		box-shadow: 0 .5rem .5rem rgba(127 127 127 / 0.1);
+	}
+
+	to {
+		scale: 1;
+		box-shadow: 0 .2rem .2rem rgba(127 127 127 / 0.1);
+	}
+}
+
+.btn {
+	display: block;
+	line-height: 0;
+	background-color: transparent;
+	border-radius: .5rem;
+	border: 1px solid rgba(127 127 127 / 0.5);
+	cursor: pointer;
+
+	transition:
+		scale ease-out 150ms,
+		box-shadow ease-out 150ms;
+
+	&:hover {
+		scale: 1.1;
+		box-shadow: 0 .2rem .2rem rgba(127 127 127 / 0.1);
+	}
+
+	&.btn-push-anim {
+		animation: push 250ms ease-out;
+	}
+}
+
+.btn.btn-icon {}
+
+.btn.btn-link {}
