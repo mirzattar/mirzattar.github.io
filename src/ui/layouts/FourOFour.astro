@@ -1,0 +1,23 @@
+---
+import { LocaleCodes } from "@src/globals";
+import Basic from "@l/Basic.astro";
+import "@css/404.css";
+import Heading from "../components/Heading";
+
+interface Props {
+	lang: LocaleCodes;
+	desc: string;
+	children?: never;
+}
+
+const { lang, desc } = Astro.props;
+---
+
+<script src="@js/lang-redirector.ts"></script>
+<Basic PageName="404" lang={lang}>
+	<Heading level={1}>404</Heading>
+	<h2>{desc}</h2>
+	<p class="home-link">
+		<a href="/"> <code> &#10095; cd ~<span class="blink">_</span></code></a>
+	</p>
+</Basic>
