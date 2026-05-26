@@ -9,7 +9,7 @@ const ID = "randomThemeButton"
 
 export default forwardRef(function ThemeToggle(props: any, ref) {
 	const { id, onClick: userOnClick, class: userClass, className: userClassName, ...rest } = props || {}
-	
+
 	const clickHandler = (e?: Event) => {
 		ACCENT_COLOR_HUE.value = randomHue()
 		if (typeof userOnClick === 'function') userOnClick(e)
