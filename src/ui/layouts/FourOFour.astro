@@ -5,19 +5,13 @@ import "@css/404.css";
 import Heading from "../components/Heading";
 
 interface Props {
-	lang: LocaleCodes;
-	desc: string;
 	children?: never;
 }
-
-const { lang, desc } = Astro.props;
 ---
 
 <script src="@js/lang-redirector.ts"></script>
-<Basic PageName="404" lang={lang}>
+
+<Basic PageName="404" lang={LocaleCodes.EN}>
 	<Heading level={1}>404</Heading>
-	<h2>{desc}</h2>
-	<p class="home-link">
-		<a href="/"> <code> &#10095; cd ~<span class="blink">_</span></code></a>
-	</p>
+	<a href="/" class="home-link"> &#10095; cd ~<span class="blink">_</span></a>
 </Basic>
