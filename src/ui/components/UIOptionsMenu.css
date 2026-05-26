@@ -1,0 +1,33 @@
+#uiOptionsMenu {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: .5rem;
+
+	#uiOptionsMenuPanel {
+		display: flex;
+		flex-direction: column;
+		gap: .5rem;
+	}
+
+	.ui-options-tooltip-arrow {
+		display: block;
+		position: relative;
+		overflow: clip;
+		background-color: black;
+	}
+
+	button {
+		aspect-ratio: 1 / 1;
+
+		img {
+			min-width: 2em;
+		}
+	}
+}
+
+.ui-options-tooltip-portal {
+	display: contents;
+}

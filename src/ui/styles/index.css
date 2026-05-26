@@ -52,24 +52,6 @@ main {
 		list-style-type: none;
 		padding: 0;
 	}
-
-	button img {
-		min-width: 2em;
-	}
-
-	button {
-		aspect-ratio: 1 / 1;
-		margin-inline: auto;
-
-		&.btn-push-anim {
-			animation: push 250ms ease-out;
-		}
-	}
-
-	.btn-container {
-		margin-block-start: 1em;
-		display: flex;
-	}
 }
 
 @container (width < 500px) {

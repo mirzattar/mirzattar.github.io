@@ -1,34 +1,35 @@
 import { Button as BaseUIButton } from '@base-ui/react/button'
 import "./Button.css"
 import * as globals from '@src/globals'
+import { forwardRef } from 'preact/compat'
 
 interface ButtonProps extends BaseUIButton.Props {
 }
 
-export function Button(props: ButtonProps) {
+export const Button = forwardRef<any, ButtonProps>((props, ref) => {
 	const { className, children, ...passProps } = props
 
 	return (
-		<BaseUIButton className={ `btn ${className}` } { ...passProps }>
+		<BaseUIButton ref={ ref } className={ `btn ${className}` } { ...passProps }>
 			{ children }
 		</BaseUIButton>
 	)
-}
+})
 
 interface IconButtonProps extends ButtonProps {
 	icon: globals.PageImage
 }
 
-export function IconButton(props: IconButtonProps) {
+export const IconButton = forwardRef<any, IconButtonProps>((props, ref) => {
 	const { icon, className, children, ...passProps } = props
 
 	return (
-		<Button className={ `btn btn-icon ${className}` } { ...passProps }>
+		<Button ref={ ref } className={ `btn btn-icon ${className}` } { ...passProps }>
 			<img src={ icon.src } alt="Icon" />
 			{ children }
 		</Button>
 	)
-}
+})
 
 interface LinkButtonProps extends ButtonProps {
 	href: string
