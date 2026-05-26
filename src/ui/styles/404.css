@@ -23,6 +23,7 @@ body {
 	color: var(--fg-1);
 
 	.home-link {
+		font-family: monospace;
 		font-size: 2rem;
 		background-color: var(--bg-1);
 		padding: .5em 1em;
@@ -39,10 +40,8 @@ body {
 			/* padding-block: 1em; */
 		}
 
-		a {
-			color: var(--fg-1-accent);
-			text-decoration: none;
-		}
+		color: var(--fg-1-accent);
+		text-decoration: none;
 
 		.blink {
 			font-weight: bold;
