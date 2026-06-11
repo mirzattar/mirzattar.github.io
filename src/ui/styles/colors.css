@@ -16,7 +16,9 @@
 
 :root {
 	--bg-1-accent: color-mix(in oklch, var(--accent), var(--bg-1));
-	--bg-1-accent-gradient: linear-gradient(to bottom, var(--bg-1), var(--bg-1-accent) 200%);
+	--bg-1-accent-gradient: linear-gradient(to bottom, var(--bg-1), var(--bg-1-accent) 300%);
+
+	--bg-2-accent: color-mix(in oklch, var(--bg-1-accent), var(--bg-1));
 
 	--fg-1-accent: color-mix(in oklch, var(--accent), var(--fg-1));
 	--fg-1-accent-gradient: linear-gradient(to bottom, var(--fg-1), var(--accent) 250%);

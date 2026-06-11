@@ -13,4 +13,3 @@ export const STORAGE_ACCENT_COLOR_HUE_KEY = "accentHue"
 
 export const ACCENT_COLOR_HUE_NUM = 243
 
-export type PageImage = SvgComponent & ImageMetadata

@@ -1,23 +1,20 @@
 import { Button } from '@c/Buttons'
 
-import faSun from "@img/sun-solid-full.svg"
-import faMoon from "@img/moon-solid-full.svg"
+import faSun from "@img/icons/sun-solid-full.svg"
+import faMoon from "@img/icons/moon-solid-full.svg"
 import { useState } from 'preact/hooks'
-import { forwardRef } from 'preact/compat'
 import { Theme, Themes } from '../scripts/theme'
+import { forwardRef } from 'preact/compat'
 
 const ID = "primaryThemeToggle"
 
-export default forwardRef(function ThemeToggle(props: any, ref) {
-	const { id, onClick: userOnClick, class: userClass, className: userClassName, ...rest } = props || {}
+export default forwardRef(function ThemeToggle(_props: never, ref) {
 	const [ icon, setIcon ] = useState<string>()
-	const [ isAnimating, setIsAnimating ] = useState(false)
 
 	if (Theme.value === Themes.light) setIcon(faSun.src)
 	if (Theme.value === Themes.dark) setIcon(faMoon.src)
 
-	const clickHandler = (e?: Event) => {
-		setIsAnimating(true)
+	const clickHandler = () => {
 		if (Theme.value === Themes.light) {
 			setIcon(faMoon.src)
 			Theme.value = Themes.dark
@@ -25,17 +22,12 @@ export default forwardRef(function ThemeToggle(props: any, ref) {
 			setIcon(faSun.src)
 			Theme.value = Themes.light
 		}
-
-		if (typeof userOnClick === 'function') userOnClick(e)
 	}
 
 	return <Button
 		ref={ ref }
 		onClick={ clickHandler }
-		onAnimationEnd={ () => setIsAnimating(false) }
-		id={ id ?? ID }
-		class={ `${userClass ?? userClassName ?? ''}}` }
-		{ ...rest }
+		id={ ID }
 	>
 		<img src={ icon } alt="Toggle theme" />
 	</Button>

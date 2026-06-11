@@ -17,7 +17,7 @@ export const Button = forwardRef<any, ButtonProps>((props, ref) => {
 })
 
 interface IconButtonProps extends ButtonProps {
-	icon: globals.PageImage
+	icon: ImageMetadata
 }
 
 export const IconButton = forwardRef<any, IconButtonProps>((props, ref) => {

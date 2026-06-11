@@ -1,4 +1,4 @@
-import faBars from "@img/bars-solid-full.svg"
+import faBars from "@img/icons/bars-solid-full.svg"
 import { IconButton } from "@c/Buttons"
 import { Collapsible, Tooltip } from "@base-ui/react"
 import "./UIOptionsMenu.css"
