@@ -1,0 +1,82 @@
+---
+import Footer from "@/components/Footer/index.astro";
+import Card from "@/components/Card/index.astro";
+import T from "@/components/T.astro";
+import { cn } from "@/util";
+import Styles from "./styles";
+import { FontAwesomeIcon as FAI } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+---
+
+<div class={cn("flex flex-col")}>
+	<div id="hero" class={cn(Styles.Hero())}>
+		<Card class={cn("self-end lg:justify-self-end")} variant="title">
+			<h1 class={cn("text-4xl lg:text-6xl font-black")}>
+				<T>
+					<Fragment slot={"id"}>Halo!</Fragment>
+					<Fragment slot={"en"}>Hello!</Fragment>
+				</T>
+			</h1>
+		</Card>
+		<Card variant="dim" class={cn("self-end lg:justify-self-start")}>
+			<h2 class={cn("text-xl")}>
+				<T>
+					<Fragment slot={"id"}>
+						Nama saya
+						<b class={cn("text-2xl")}>Mirza Attar Fauzie</b>, <br
+						/>Anda bisa memanggil saya <b class={cn("text-2xl")}
+							>Attar</b
+						>
+					</Fragment>
+					<Fragment slot={"en"}>
+						My name is
+						<b class={cn("text-2xl")}>Mirza Attar Fauzie</b>, <br
+						/>you can call me <b class={cn("text-2xl")}>Attar</b>.
+					</Fragment>
+				</T>
+			</h2>
+		</Card>
+		<Card variant="dim" class={cn("self-start lg:justify-self-end")}>
+			<p class={cn("text-lg")}>
+				<T>
+					<Fragment slot={"id"}>
+						Situs ini masih dalam pembangunan, <br />tetapi
+						silahkan melihat-lihat.
+					</Fragment>
+					<Fragment slot={"en"}>
+						This site is still under construction, <br />but feel
+						free to look around.
+					</Fragment>
+				</T>
+			</p>
+		</Card>
+		<Card class={cn("self-start lg:justify-self-start")}>
+			<ul class={cn("flex gap-4")}>
+				<li>
+					<a
+						referrerpolicy="no-referrer-when-downgrade"
+						rel="noopener"
+						target="_blank"
+						href="https://github.com/mirzattar"
+						aria-label="GitHub"
+						><FAI icon={faGithub} width={30}>GitHub</FAI></a
+					>
+				</li>
+				<li>
+					<a
+						referrerpolicy="no-referrer-when-downgrade"
+						rel="noopener"
+						target="_blank"
+						href="https://www.linkedin.com/in/mirza-attar-fauzie-5a520b416/"
+						aria-label="LinkedIn"
+						><FAI icon={faLinkedin} width={30}>LinkedIn</FAI></a
+					>
+				</li>
+			</ul>
+		</Card>
+	</div>
+</div>
+<!-- TODO: work on this -->
+<!-- <div id="projects" class={cn(Styles.Projects())}>Wip</div> -->
+
+<Footer />

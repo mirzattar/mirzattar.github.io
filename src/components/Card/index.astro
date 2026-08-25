@@ -1,0 +1,12 @@
+---
+import { cn } from "@/util";
+import Styles from "../Card/styles";
+import type { VariantProps } from "class-variance-authority";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends VariantProps<typeof Styles>, HTMLAttributes<"div"> {}
+
+const { variant, class: className } = Astro.props;
+---
+
+<div class={cn(Styles({ variant }), className)} {...Astro.props}><slot /></div>

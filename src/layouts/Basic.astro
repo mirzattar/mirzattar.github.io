@@ -1,0 +1,23 @@
+---
+import "@s/global.css";
+import Head from "@/components/Head.astro";
+import type { STRINGS } from "@/globals";
+import type { TLanguageCodes } from "@/i18n/ui";
+import { Font } from "astro:assets";
+import { cn } from "@/util";
+
+interface Props {
+	pageTitle: STRINGS.PageTitleFormat;
+	lang: TLanguageCodes;
+}
+
+const { pageTitle, lang } = Astro.props;
+---
+
+<html lang={lang}>
+	<Font cssVariable="--font-display" />
+	<Head pageTitle={pageTitle} />
+	<body class={cn("bg-radial/oklch from-[#0f1024] to-transparent to-50% bg-center bg-fixed animate-gradient")}>
+		<slot />
+	</body>
+</html>
