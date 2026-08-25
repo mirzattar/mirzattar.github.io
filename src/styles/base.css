@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@layer base {
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			interpolate-size: allow-keywords;
+		}
+	}
+
+	body {
+		a {
+			@apply underline decoration-blue-300 underline-offset-6
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+
+		*,
+		*::before,
+		*::after {
+			animation: none;
+			transition: none;
+			transition-duration: 1ms;
+		}
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+}

@@ -1,0 +1,27 @@
+---
+import { type TLanguageCodes } from "@i18n/ui";
+
+import Basic from "@l/Basic.astro";
+import { STRINGS } from "@/globals";
+import Homepage from "@v/Homepage/index.astro";
+
+export function getStaticPaths() {
+	return [
+		{
+			params: { lang: "en" },
+		},
+		{
+			params: { lang: "id" },
+		},
+	];
+}
+
+const { lang } = Astro.params;
+
+const pageTitle: STRINGS.PageTitleFormat = STRINGS.title`abc`;
+const pathLang: TLanguageCodes = lang as TLanguageCodes;
+---
+
+<Basic pageTitle={pageTitle} lang={pathLang}>
+	<Homepage />
+</Basic>

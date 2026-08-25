@@ -1,7 +1,31 @@
 ---
-import FourOFour from "@src/ui/layouts/FourOFour.astro";
+import T from "@/components/T.astro";
+import { STRINGS } from "../globals";
+import Basic from "../layouts/Basic.astro";
+import Footer from "@c/Footer/index.astro";
+import { cn } from "@/util";
+
+const pageTitle = STRINGS.title(STRINGS.Pages.NotFound.Title);
 ---
 
-<script src="@js/lang-redirector.ts"></script>
-
-<FourOFour />
+<script>
+	if (
+		!window.location.pathname.startsWith("/en") &&
+		!window.location.pathname.startsWith("/id")
+	)
+		window.location.pathname = `/id${window.location.pathname}`;
+</script>
+<Basic lang={"id"} pageTitle={pageTitle}>
+	<div
+		class={cn("flex gap-8 flex-col justify-center items-center min-h-dvh")}
+	>
+		<h1 class={cn("text-9xl font-black")}>404</h1>
+		<h2 class={cn("text-2xl")}>
+			<T>
+				<Fragment slot="id"><a href="/id">Kembali ke awal</a></Fragment>
+				<Fragment slot="en"><a href="/en">Return to home</a></Fragment>
+			</T>
+		</h2>
+	</div>
+	<Footer />
+</Basic>

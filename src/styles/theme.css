@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme inline {
+	--font-sans: var(--font-display)
+}
+
+@theme {
+	--animate-gradient: homepage 6s ease-in-out infinite;
+
+	@keyframes homepage {
+
+		0%,
+		100% {
+			background-size: 100%
+		}
+
+		50% {
+			background-size: 50%
+		}
+	}
+}
+
+@layer theme {
+	:root {
+		@apply scrollbar-thumb-gray-700 scrollbar-track-black
+	}
+
+	body {
+		@apply bg-[#14181f] text-gray-200
+	}
+}

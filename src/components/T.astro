@@ -1,0 +1,8 @@
+---
+import { getPathLang, type PathWithLang, type TLanguageCodes } from "@i18n/ui";
+
+const pathname = Astro.url.pathname as PathWithLang;
+const pathLang: TLanguageCodes = getPathLang(pathname);
+---
+
+<slot name={pathLang} />

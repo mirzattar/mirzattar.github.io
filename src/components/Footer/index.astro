@@ -1,0 +1,50 @@
+---
+import T from "@c/T.astro";
+import Card from "@c/Card/index.astro";
+import { cn } from "@/util";
+import Styles from "./styles";
+import ScrollTo from "../ScrollTo";
+---
+
+<footer class={cn(Styles.Footer())}>
+	<Card variant="dim" class={cn(Styles.FooterInnerContainer())}>
+		<div class={cn(Styles.FooterChildren(), "font-semibold")}>
+			mirzattar
+		</div>
+		<hr class={cn(Styles.Hr())} />
+		<ScrollTo
+			className={cn(
+				Styles.FooterChildren(),
+				"text-gray-500 text-xs cursor-pointer",
+			)}
+			to={0}
+			client:only="react"
+		>
+			<T>
+				<Fragment slot="id">Kembali ke atas</Fragment>
+				<Fragment slot="en">Back to top</Fragment>
+			</T>
+		</ScrollTo>
+		<hr class={cn(Styles.Hr())} />
+		<div class={cn(Styles.FooterChildren(), "text-xs")}>
+			<T>
+				<Fragment slot="id">
+					Konten dilisensikan di bawah <br /><a
+						rel="noopener"
+						target="_blank"
+						href="https://creativecommons.org/licenses/by-sa/4.0/deed.id"
+						>CC-BY-SA 4.0</a
+					>
+				</Fragment>
+				<Fragment slot="en">
+					Content licensed under <br /><a
+						rel="noopener"
+						target="_blank"
+						href="https://creativecommons.org/licenses/by-sa/4.0/deed"
+						>CC-BY-SA 4.0</a
+					></Fragment
+				>
+			</T>
+		</div>
+	</Card>
+</footer>

@@ -1,15 +1,13 @@
-import type { SvgComponent } from "astro/types"
+export namespace STRINGS {
+	export const SiteName = "mirzattar" as const
+	export type PageTitleFormat = `${string} - ${typeof SiteName}`
+	export function title(text: TemplateStringsArray | string): PageTitleFormat {
+		return `${text} - ${SiteName}`
+	}
 
-export enum LocaleCodes {
-	EN = "en",
-	ID = "id"
+	export namespace Pages {
+		export enum NotFound {
+			Title = "404"
+		}
+	}
 }
-
-export const STORAGE_THEME_KEY = "theme"
-
-export const STORAGE_LANGUAGE_KEY = "lang"
-
-export const STORAGE_ACCENT_COLOR_HUE_KEY = "accentHue"
-
-export const ACCENT_COLOR_HUE_NUM = 243
-
